@@ -2,7 +2,7 @@
 document.body.style.backgroundColor ="#F0E9DD";
 
 // Color de letras TRENDING
-let textos = document.querySelectorAll(".negro");
+let textos = document.querySelectorAll(".titulo");
 
 textos.forEach(function(elemento) {
   elemento.style.color = "#2A2624";
@@ -22,7 +22,7 @@ const seamless2 = document.querySelectorAll("p")
 seamless2[1].innerText = "Todos los aman, y tú también lo harás."
 
 const sudaderas1 = document.querySelectorAll("h4")
-sudaderas1[2].innerText = "SUDADESAS"
+sudaderas1[2].innerText = "PLAYERAS"
 const sudaderas2 = document.querySelectorAll("p")
 sudaderas2[2].innerText = "La prenda de transición definitiva que nunca falla."
 
