@@ -1,19 +1,19 @@
-
-
 body, html {
     height: 100%;
 }
 
 /* The hero image */
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(175, 175, 175, 0.5), rgba(0, 0, 0, 0.5)), url("Pictures/Hero/Hero.png");
-  /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Pictures/Hero/Hero.png");*/
 
-  /* Set a specific height */
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columnas */
+  grid-template-rows: auto;
+  gap: 16px;
+
+
+  background-image: linear-gradient(rgba(175, 175, 175, 0.5), rgba(0, 0, 0, 0.5)), url("Pictures/Hero/Hero.png");
+
   height: 75%;
 
-  /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +35,6 @@ body, html {
 .hero-text {
   font-size: 2vw;
   font-family: Lucida Handwriting, cursive;
-
   text-align: center;
   position: absolute;
   top: 33%;
@@ -54,3 +53,153 @@ font-size: 1vw;
   transform: translate(-50%, -50%);
   color:white ;
 }
+
+/* ── CTA container ── */
+.hero-cta {
+  position: absolute;
+  top: 52%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+
+/* ── Formulario de registro ── */
+.registro-form {
+  display: flex;
+  align-items: stretch;
+  margin-top: 4px;
+}
+.registro-form input[type="email"] {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+  letter-spacing: 0.05em;
+  padding: 8px 14px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: none;
+  outline: none;
+  width: 220px;
+  transition: border-color 0.2s;
+}
+.registro-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+.registro-form input[type="email"]:focus {
+  border-color: #0D6E79;
+}
+.registro-form button {
+  font-size: 1rem;
+  padding: 8px 14px;
+  background-color: #0D6E79;
+  color: #ffffff;
+  border: 1px solid #0D6E79;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.registro-form button:hover {
+  background-color: #0a5560;
+}
+
+/*Estilos de botones*/
+
+/* ── Botones base ── */
+.btn-atletico {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ── Botón primario: sólido con color de marca ── */
+.btn-principal {
+  background-color: #0D6E79;
+  color: #ffffff;
+  border: 2px solid #0D6E79;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+}
+.btn-principal:hover {
+  background-color: #0a5560;
+  border-color: #0a5560;
+  letter-spacing: 0.24em;
+}
+
+/* ── Botón secundario: outline translúcido ── */
+.btn-secundario {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+}
+.btn-secundario:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  letter-spacing: 0.24em;
+}
+
+/* ── Formulario de registro ── */
+.registro-form {
+  display: flex;
+  align-items: stretch;
+  margin-top: 4px;
+}
+.registro-form input[type="email"] {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+  letter-spacing: 0.05em;
+  padding: 8px 14px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: none;
+  outline: none;
+  width: 220px;
+  transition: border-color 0.2s;
+}
+.registro-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+.registro-form input[type="email"]:focus {
+  border-color: #0D6E79;
+}
+.registro-form button {
+  font-size: 1rem;
+  padding: 8px 14px;
+  background-color: #0D6E79;
+  color: #ffffff;
+  border: 1px solid #0D6E79;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.registro-form button:hover {
+  background-color: #0a5560;
+}
+
+/*
+Estilos de botones
+  .btn.btn-primary {
+    border-color: #0D6E79;
+    background-color: #0D6E79;
+  }
+
+  .btn.btn-primary {
+    border-color: #0D6E79;
+    background-color: #0D6E79;
+
+    margin: 1000;
+    padding: 1600;
+
+    font-size: 2vw;
+    text-align: center;
+  }
+*/
