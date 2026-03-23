@@ -19,7 +19,7 @@ function addToCart(element) {
 }
 
 function deleteFromCart(index) {
-    console.log("borrarrrr",index)
+    console.log("borrarrrr", index);
     let carro;
     if (!localStorage.getItem("cart")) {
         carro = [];
@@ -28,9 +28,8 @@ function deleteFromCart(index) {
     }
     carro.splice(index, 1);
 
-    console.log(carro)
+    console.log(carro);
     document.getElementById("cart-cuantity").innerText = carro.length;
-
 
     localStorage.setItem("cart", JSON.stringify(carro));
 }
@@ -66,127 +65,119 @@ function generateCarrito() {
         res.append(h1);
     } else {
         const container = document.createElement("div");
-        container.className = "container";
+        container.style.flexDirection = "column";
+        container.style.width = "100%";
+        container.className = "container ";
 
-        carro.forEach((element,index) => {
+        carro.forEach((element, index) => {
             container.appendChild(
                 createCarritoElement(
                     element.item,
                     element.cuantity,
                     element.img,
                     element.value,
-                    index
+                    index,
                 ),
             );
         });
 
         res.appendChild(container);
 
-        const terminarDiv = document.createElement("div")
-        terminarDiv.className = "d-grid gap-2 col-6 mx-auto"
+        const terminarDiv = document.createElement("div");
+        terminarDiv.className = "d-grid gap-2 col-6 mx-auto";
 
-        const terminar = document.createElement("button")
-        terminar.className = "btn btn-primary"
-        terminar.innerText = "Terminar compra"
+        const terminar = document.createElement("button");
+        terminar.className = "btn btn-primary";
+        terminar.innerText = "Terminar compra";
 
-        terminarDiv.append(terminar)
+        terminarDiv.append(terminar);
 
-        res.append(terminarDiv)
-
+        res.append(terminarDiv);
     }
 
     return res;
 }
 
-function createCarritoElement(item, cuantity, img, value,index) {
+function createCarritoElement(item, cuantity, img, value, index) {
     const div = document.createElement("div");
     div.className = "row";
-
+    div.style.width = "100%"
 
     const imgDiv = document.createElement("div");
-    imgDiv.className = "col-3"
+    imgDiv.className = "col-3";
     const imgEle = document.createElement("img");
     imgEle.src = img;
-    imgDiv.append(imgEle)
-    
+    imgDiv.append(imgEle);
+
     const titleDiv = document.createElement("div");
-    titleDiv.className = "col-6"
-    const pTitle = document.createElement("p")
-    pTitle.className = "fs-4 lh-1"
+    titleDiv.className = "col-6";
+    const pTitle = document.createElement("p");
+    pTitle.className = "fs-4 lh-1";
     pTitle.innerText = item;
 
     titleDiv.append(pTitle);
 
     const priceDiv = document.createElement("div");
-    priceDiv.className = "col-3  d-flex flex-column"
+    priceDiv.className = "col-3  d-flex flex-column";
     const pPrice = document.createElement("p");
-    pPrice.className ="fs-6  lh-1 fw-light"
+    pPrice.className = "fs-6  lh-1 fw-light";
     pPrice.innerText = value * cuantity;
 
-    
-
-
     const boton = document.createElement("a");
-    boton.addEventListener("click",() => deleteFromCart(index));
-    boton.innerText = `Borrar`
+    boton.addEventListener("click", () => deleteFromCart(index));
+    boton.innerText = `Borrar`;
     boton.setAttribute("data-index", index);
-    boton.className ="btn btn-light btn-borrar";
+    boton.className = "btn btn-light btn-borrar";
 
     priceDiv.appendChild(boton);
     priceDiv.appendChild(pPrice);
 
-
-    div.append(imgDiv)
-    div.append(titleDiv)
-    div.append(priceDiv)
-
+    div.append(imgDiv);
+    div.append(titleDiv);
+    div.append(priceDiv);
 
     return div;
 }
 
-
-let carro;
+let cart;
 if (!localStorage.getItem("cart")) {
-    carro = [];
+    cart = [];
 } else {
-    carro = JSON.parse(localStorage.getItem("cart"));
+    cart = JSON.parse(localStorage.getItem("cart"));
 }
-document.getElementById("cart-cuantity").innerText = carro.length;
+console.log(cart);
+document.getElementById("cart-cuantity").innerText = cart.length;
 
 // ===== CARRITO =====
-const carrito = document.querySelector('.carrito-btn');
+const carrito = document.querySelector(".carrito-btn");
 
 if (carrito) {
-  carrito.addEventListener('click', () => {
-    alert('Producto agregado al carrito 🛒');
-  });
+    carrito.addEventListener("click", () => {
+        alert("Producto agregado al carrito 🛒");
+    });
 }
-
 
 // ===== BUSCADOR =====
-const search = document.querySelector('.search');
+const search = document.querySelector(".search");
 
 if (search) {
-  search.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      
-      // Validación
-      if (search.value.trim() === '') {
-        alert('Escribe algo para buscar');
-      } else {
-        alert('Buscando: ' + search.value);
-      }
-
-    }
-  });
+    search.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            // Validación
+            if (search.value.trim() === "") {
+                alert("Escribe algo para buscar");
+            } else {
+                alert("Buscando: " + search.value);
+            }
+        }
+    });
 }
 
-
 // ===== LOGO INTERACCIÓN =====
-const logo = document.querySelector('.logo');
+const logo = document.querySelector(".logo");
 
 if (logo) {
-  logo.addEventListener('click', () => {
-    alert('Bienvenido a Punto Cero Collection ✨');
-  });
+    logo.addEventListener("click", () => {
+        alert("Bienvenido a Punto Cero Collection ✨");
+    });
 }
