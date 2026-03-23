@@ -216,3 +216,35 @@ body {
 .icons span:hover {
   color: #0D6E79;
 }
+
+
+
+body {
+  background-color: #FDF8F7 !important; /* Fondo */
+}
+
+.custom-footer {
+  background-color: #F0E9DD !important;
+  border-top: 1px solid #C5B6A3 !important;
+}
+
+/* Títulos columnas */
+.custom-footer .footer-title {
+  color: #0D6E79 !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Enlaces normales */
+.custom-footer a.footer-link {
+  color: #2A2624 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Enlaces hover*/
+.custom-footer a.footer-link:hover {
+  color: #0D6E79 !important;
+  padding-left: 5px;
+}
