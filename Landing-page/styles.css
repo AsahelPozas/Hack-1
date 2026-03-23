@@ -1,3 +1,64 @@
+/*Contenedor TRENDING*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f3;
+  color: #2A2624;
+}
+
+.trending {
+  width: 94%;
+  margin: 40px auto 0 auto;
+}
+
+.titulo {
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.contenedor-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  align-items: start;
+}
+
+.item img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  display: block;
+}
+
+.item h4 {
+  font-size: 1rem;
+  font-weight: 900;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.item p {
+  font-size: 0.95rem;
+  color: #8A7E73;
+  line-height: 1.45;
+  max-width: 95%;
+}
+
+/* Tamaño de imagenes TRENDING */
+.item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+}
 /* 
 .hero-text { 
   position: absolute;
