@@ -1,0 +1,102 @@
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #F0E9DD;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #F0E9DD;
+  border-bottom: 1px solid #C5B6A3;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* CONTENEDOR */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #0D6E79;
+}
+
+.logo-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: #0D6E79;
+  letter-spacing: 2px;
+}
+
+/* MENU */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2A2624;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover */
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #0D6E79;
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* BUSCADOR */
+.search {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #C5B6A3;
+  outline: none;
+  background-color: white;
+  margin-right: 15px;
+}
+
+/* ICONOS */
+.icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #2A2624;
+}
+
+.icons span {
+  transition: 0.3s;
+}
+
+.icons span:hover {
+  color: #0D6E79;
+}
