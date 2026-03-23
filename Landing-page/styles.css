@@ -1,0 +1,8 @@
+.popover.popover-ancho {
+  --bs-popover-max-width: 1000px;
+}
+
+.popover {
+  max-width: none !important;
+  width: 18500px !important;
+}
