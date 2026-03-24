@@ -28,3 +28,52 @@ body {
   color: #0D6E79 !important;
   padding-left: 5px;
 }
+
+/* Líneas divisorias */
+.custom-footer hr {
+  border-top-color: #C5B6A3 !important;
+  opacity: 0.5;
+}
+
+/* Íconos sociales y de contacto*/
+.custom-footer .social-icon,
+.custom-footer .contact-icon {
+  color: #0D6E79 !important;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover en íconos*/
+.custom-footer .social-icon:hover {
+  color: #2A2624 !important; 
+  transform: scale(1.1);
+}
+
+/* Texto de Copyright */
+.custom-footer .copyright-text,
+.custom-footer .copyright-text strong {
+  color: #8A7E73 !important;
+  font-size: 0.85rem;
+}
+
+/* Estilo soporte desarrollador */
+.custom-footer a.developer-link {
+  color: #8A7E73 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+
+.custom-footer a.developer-link:hover {
+  color: #0D6E79 !important;
+}
+
+/* Cajas*/
+.brand-box-dark {
+  background-color: #2A2624 !important; 
+  color: #FDF8F7 !important; 
+  height: 80px;
+}
+
+.brand-box-light {
+  background-color: #C5B6A3 !important; 
+  color: #2A2624 !important; 
+}
