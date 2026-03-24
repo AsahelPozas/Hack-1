@@ -224,6 +224,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #fdf8f7;
+  overflow: visible;
 }
 
 /* NAVBAR */
@@ -231,6 +232,9 @@ body {
     background-color: #f0e9dd;
     border-bottom: 1px solid #c5b6a3;
     padding: 15px 40px;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -269,6 +273,8 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .menu a {
@@ -277,6 +283,13 @@ body {
     font-weight: 500;
     position: relative;
     transition: 0.3s;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.menu li {
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 /* Hover */
@@ -641,4 +654,22 @@ body {
 }
 .registro-form button:hover {
   background-color: #0a5560;
+}
+
+
+.cart-img-div{
+  aspect-ratio: 1;
+  height: 50px;
+  max-height: 70px;
+  position: relative;
+  display: flex;
+}
+
+.cart-img{
+  display: flex;
+  flex: 1;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
 }

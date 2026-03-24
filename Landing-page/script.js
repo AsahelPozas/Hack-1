@@ -31,6 +31,7 @@ const tops1 = document.querySelectorAll("h4");
 tops1[3].innerText = "TOPS";
 const tops2 = document.querySelectorAll("p");
 tops2[5].innerText = "Elige un sostén deportivo que se mueva contigo.";
+
 function addToCart(element) {
     let carro;
     if (!localStorage.getItem("cart")) {
@@ -40,31 +41,64 @@ function addToCart(element) {
     }
 
     carro.push({
-        item: "item",
-        cuantity: 0,
-        img: "img",
-        value: 0,
+        item: element.item,
+        cuantity: 1,
+        img: element.img,
+        value: element.value,
     });
 
     document.getElementById("cart-cuantity").innerText = carro.length;
 
     localStorage.setItem("cart", JSON.stringify(carro));
+
+
+    document.getElementById("popover-div-body").replaceWith(generateCarrito());
 }
 
 function deleteFromCart(index) {
-    console.log("borrarrrr", index);
     let carro;
     if (!localStorage.getItem("cart")) {
         carro = [];
     } else {
         carro = JSON.parse(localStorage.getItem("cart"));
     }
+    
     carro.splice(index, 1);
 
-    console.log(carro);
     document.getElementById("cart-cuantity").innerText = carro.length;
-
     localStorage.setItem("cart", JSON.stringify(carro));
+
+
+    document.getElementById("popover-div-body").replaceWith(generateCarrito());
+
+
+    
+}
+
+function addCuantity(index,value){
+    let carro;
+    if (!localStorage.getItem("cart")) {
+        carro = [];
+    } else {
+        carro = JSON.parse(localStorage.getItem("cart"));
+    }
+    carro[index].cuantity += value;
+
+
+    if(carro[index].cuantity === 0){
+        
+        carro.splice(index, 1);
+
+        document.getElementById("cart-cuantity").innerText = carro.length;
+        localStorage.setItem("cart", JSON.stringify(carro));
+    document.getElementById("popover-div-body").replaceWith(generateCarrito());
+
+    }else{
+        localStorage.setItem("cart", JSON.stringify(carro));
+    document.getElementById("popover-div-body").replaceWith(generateCarrito());
+
+    }
+        localStorage.setItem("cart", JSON.stringify(carro));
 }
 
 const popoverTriggerList = document.querySelectorAll(
@@ -91,6 +125,7 @@ function generateCarrito() {
     }
 
     let res = document.createElement("div");
+    res.id = "popover-div-body";
 
     if (carro.length === 0) {
         const h1 = document.createElement("h1");
@@ -133,37 +168,57 @@ function generateCarrito() {
 
 function createCarritoElement(item, cuantity, img, value, index) {
     const div = document.createElement("div");
+    div.id = `item-${index}`
     div.className = "row";
     div.style.width = "100%";
 
     const imgDiv = document.createElement("div");
-    imgDiv.className = "col-3";
+    imgDiv.className = "col-3 cart-img-div";
     const imgEle = document.createElement("img");
+    imgEle.className ="cart-img"
     imgEle.src = img;
     imgDiv.append(imgEle);
 
     const titleDiv = document.createElement("div");
-    titleDiv.className = "col-6";
+    titleDiv.className = "col-7";
     const pTitle = document.createElement("p");
     pTitle.className = "fs-4 lh-1";
     pTitle.innerText = item;
 
-    titleDiv.append(pTitle);
+    const pCuantity = document.createElement("p");
+    const botonMore = document.createElement("button");
+    botonMore.innerHTML = `+`
+    botonMore.className = "btn btn-light"
+    botonMore.addEventListener("click", () => addCuantity(index,1))
+    const botonLess = document.createElement("button");
+    botonLess.innerHTML = `-`
+    botonLess.className = "btn btn-light"
+    botonLess.addEventListener("click", () => addCuantity(index,-1))
+    const spanCuantity = document.createElement("span");
+    spanCuantity.innerText = cuantity;
+    spanCuantity.className = "mx-2"
+
+    pCuantity.append(botonLess,spanCuantity,botonMore)
+    titleDiv.append(pTitle,pCuantity);
 
     const priceDiv = document.createElement("div");
-    priceDiv.className = "col-3  d-flex flex-column";
+    priceDiv.className = "col-2  d-flex flex-column";
     const pPrice = document.createElement("p");
     pPrice.className = "fs-6  lh-1 fw-light";
-    pPrice.innerText = value * cuantity;
+    pPrice.innerText = `Total: $${value * cuantity}`;
 
-    const boton = document.createElement("a");
+    const boton = document.createElement("button");
     boton.addEventListener("click", () => deleteFromCart(index));
-    boton.innerText = `Borrar`;
+    boton.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+</svg>
+    `;
     boton.setAttribute("data-index", index);
     boton.className = "btn btn-light btn-borrar";
 
-    priceDiv.appendChild(boton);
     priceDiv.appendChild(pPrice);
+    priceDiv.appendChild(boton);
 
     div.append(imgDiv);
     div.append(titleDiv);
