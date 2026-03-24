@@ -131,7 +131,7 @@ flex-wrap:wrap;
 }
 
 .tallas button:hover {
-  background: #00e5ff;
+  background: #C1B5AB;
 }
 
 /* texto card */
@@ -480,7 +480,7 @@ border-radius:4px;
 
 .tallas button:hover,
 .colores button:hover{
-background:#00ffff;
+background: #C1B5AB;
 }
 
 
