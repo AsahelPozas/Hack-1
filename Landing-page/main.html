@@ -151,38 +151,103 @@
 
   <main class="container-fluid flex-grow-1 my-4" style="flex-direction: column; display: flex;">
 
-    <div class="trending container my-5">
+<!-- TRENDING -->
+<section class="trending">
+  <div class="trending-layout">
+
+    <div class="trending-texto">
       <h2 class="titulo">POPULAR EN ESTE MOMENTO</h2>
-
-      <div class="contenedor-cards">
-        <div class="item">
-          <img src="Pictures/Hombres/Pantalon_1.png" alt="Módelo usando joggers">
-          <h4></h4> <!--JOGGERS [0]-->
-          <p></p> <!--Texto JOGGERS [0]-->
-        </div>
-
-        <div class="item">
-          <img src="Pictures/Mujeres/Short_1.jpeg" alt="Módelo usando short seamless">
-          <h4></h4> <!--SEAMLESS [1]-->
-          <p></p> <!--Texto SEAMLESS [1]-->
-        </div>
-
-        <div class="item">
-          <img src="Pictures/Hombres/Playera_1.png" alt="Módelo usando una playera deportiva">
-          <h4></h4> <!--PLAYERAS [2]-->
-          <p></p> <!--Texto PLAYERAS [2]-->
-        </div>
-
-        <div class="item">
-          <img src="Pictures/Mujeres/Top_2.jpeg" alt="Módelo usando un top deportivo">
-          <h4></h4> <!--TOPS [3]-->
-          <p></p> <!--Texto TOPS [3]-->
-        </div>
-      </div>
     </div>
 
+    <div class="contenedor-productos">
 
-    <div class="container my-5" style="flex-direction: column; display: flex; justify-content: start;">
+      <div class="producto-card">
+        <div class="producto-img">
+          <img src="Pictures/Hombres/Pantalon_1.png" class="img1" alt="Joggers vista delantera">
+          <img src="Pictures/Hombres/Pantalon_2.png" class="img2" alt="Joggers vista trasera">
+
+          <div class="overlay">
+            <p>Tallas</p>
+            <div class="tallas">
+              <button>S</button>
+              <button>M</button>
+              <button>L</button>
+              <button>XL</button>
+            </div>
+          </div>
+        </div>
+
+        <h4></h4> <!--Jogger-->
+        <p></p>
+      </div>
+
+      <div class="producto-card">
+        <div class="producto-img">
+          <img src="Pictures/Mujeres/Short_1.jpeg" class="img1" alt="Seamless vista delantera">
+          <img src="Pictures/Mujeres/Short_2.jpeg" class="img2" alt="Seamless vista trasera">
+
+          <div class="overlay">
+            <p>Tallas</p>
+            <div class="tallas">
+              <button>XS</button>
+              <button>S</button>
+              <button>M</button>
+              <button>L</button>
+            </div>
+          </div>
+        </div>
+
+        <h4></h4> <!--SEAMLESS-->
+        <p>Short deportivo ligero y ajustable.</p>
+      </div>
+
+      <div class="producto-card">
+        <div class="producto-img">
+          <img src="Pictures/Hombres/Playera_1.png" class="img1" alt="Playera vista delantera">
+          <img src="Pictures/Hombres/Playera_2.png" class="img2" alt="Playera vista trasera">
+
+          <div class="overlay">
+            <p>Tallas</p>
+            <div class="tallas">
+              <button>S</button>
+              <button>M</button>
+              <button>L</button>
+              <button>XL</button>
+            </div>
+          </div>
+        </div>
+
+        <h4></h4> <!--PLAYERAS-->
+        <p>Playera ideal para actividad física diaria.</p>
+      </div>
+
+      <div class="producto-card">
+        <div class="producto-img">
+          <img src="Pictures/Mujeres/Top_1.jpeg" class="img1" alt="Top vista delantera">
+          <img src="Pictures/Mujeres/Top_2.jpeg" class="img2" alt="Top vista trasera">
+
+          <div class="overlay">
+            <p>Tallas</p>
+            <div class="tallas">
+              <button>XS</button>
+              <button>S</button>
+              <button>M</button>
+              <button>L</button>
+            </div>
+          </div>
+        </div>
+
+        <h4></h4> <!--TOPS-->
+        <p>Top cómodo y flexible para entrenamiento.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!--MUJERES-->
+    <div class="container my-5"  style="flex-direction: column; display: flex; justify-content: start;">
       <div class="d-flex justify-content-between align-items-center mb-4 " style="width: 100%;">
         <div>
           <h6 class="text-uppercase mb-0 text-muted" style="font-size: 0.8rem;">Mujeres</h6>
@@ -305,7 +370,8 @@
         <a href="#" class="text-dark fw-bold text-decoration-none border-bottom border-dark">Ver Todo</a>
       </div>
 
-      <div class="contenedor-productos">
+<!--HOMBRES-->
+<div class="contenedor-productos">
 
 
 
