@@ -155,7 +155,7 @@ function generateCarrito() {
         terminarDiv.className = "d-grid gap-2 col-6 mx-auto";
 
         const terminar = document.createElement("button");
-        terminar.className = "btn btn-primary";
+        terminar.className = "btn-atletico btn-principal";
         terminar.innerText = "Terminar compra";
 
         terminarDiv.append(terminar);
